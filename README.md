@@ -14,10 +14,24 @@ yarn add @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ether
 yarnn add @openzeppelin/contracts
 ```
 
-to deploy the smart contract, run the deploy contract from the project folder with the shell command below. To enable it you need to set-up a metamask wallet and get rinkeby test ETH on the wallet. Steps provided here https://www.youtube.com/watch?v=wbv7telXcFw
+Nest,  you need to set-up environmental variables. Shell command
+```
+yarn add dotenv --dev
+```
+Then create a dotenv file in the project folder including:
+
+STAGING_ALCHEMY_KEY='XXX' // Put the Rinkeby API key to the node that connects to the Ethereum Rinkeby network (Check Alchemy)
+ROPSTEN_ALCHEMY_KEY='XXX'
+KOVAN_ALCHEMY_KEY='XXX'
+PROD_ALCHEMY_KEY='XXX' // mainnet
+PRIVATE_KEY=''XXX'' // you private key connected to your wallet (Metamask)
+
+
+To deploy the smart contract, run the deploy contract from the project folder with the shell command below. To enable it you need to set-up a metamask wallet and get rinkeby test ETH on the wallet. Steps provided here https://www.youtube.com/watch?v=wbv7telXcFw
 ```
 yarn run hardhat scripts/deploy.js --network rinkeby
 ```
+
 
 # Front-end
 This game is best played with the front-end developed in conjuntion: https://github.com/AlexAdamov/NftTurnGameFrontEnd
